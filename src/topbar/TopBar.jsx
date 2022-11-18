@@ -19,7 +19,7 @@ export default function TopBar() {
         </div>
         <div className="topRight">
             <img className ="topImg" 
-                src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                src="https://media-exp1.licdn.com/dms/image/C4D03AQGQxEHObPdKPw/profile-displayphoto-shrink_800_800/0/1521378950303?e=2147483647&v=beta&t=xWKvfpVbtvHdA6OOKLRJN4Mj40TDBE8ns5Hw7oPGoL0"
                 alt=""
             />
             <i className =" topSearchIcon fas fa-search"></i>
