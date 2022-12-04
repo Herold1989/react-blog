@@ -52,7 +52,7 @@
   .writeText {
     width: 70vw;
     height: 100vh;
-    font-family: inherit;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 20px;
   }
   
