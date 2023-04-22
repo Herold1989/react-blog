@@ -26,7 +26,6 @@ function App() {
         <Route path="/write" element={user ? <Write /> : <Register />} />
         <Route path="/post/:postId" element={<Single />} />
       </Routes>
-      <Register />
     </Router>
   );
 }
