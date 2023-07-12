@@ -14,6 +14,7 @@ mongoose.connect(process.env.MONGO_URL, {
 
 app.use("/api/auth", authRoute)
 
+
 app.listen("8080", ()=>{
     console.log("Backend is running.");
 })
