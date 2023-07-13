@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const User = require("../models/User");
-const bycript = require("bcrypt");
+const bcrypt = require("bcrypt");
 
 //Register
 router.post("/register", async (req, res) =>{
@@ -8,7 +8,7 @@ router.post("/register", async (req, res) =>{
     try{
 
         const salt = await bcrypt.genSalt(10)
-        const hashedPass = await bcrypt.hash(req.body.password, salt)
+        const hashedPass = await bcrypt.hash(req.body.password, 10)
 
         const newUser = new User({
             username: req.body.username,
@@ -33,10 +33,10 @@ router.post("/register", async (req, res) =>{
 router.post("/login", async (req, res) =>{
     try{
         const user = await User.findOne({username: req.body.username})
-        !user && res.status(400).json("Wrong credentials!")
+        !user && res.status(400).json("Wrong username credentials!")
 
-        const validated = await bycypt.compare(req.body.password, user.password)
-        !validated  && res.status(400).json("Wrong credentials!")
+        const validated = await bcrypt.compare(req.body.password, user.password)
+        !validated  && res.status(400).json("Wrong password credentials!")
 
         const {password, ...others} = user.doc
 
