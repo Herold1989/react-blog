@@ -2,6 +2,7 @@
 
 #logins
 ../api/.env
+.env
 
 
 # dependencies
