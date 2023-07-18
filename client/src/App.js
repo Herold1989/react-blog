@@ -5,6 +5,9 @@ import Write from "./pages/write/Write";
 import Settings from "./pages/settings/Settings";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
+import { useContext } from "react";
+import { Context } from "./context/Context";
+
 
 import {
   BrowserRouter as Router,
@@ -14,7 +17,7 @@ import {
 
 
 function App() {
-  const user = false;
+  const { user } = useContext(Context)
   return (
     <Router>
       <TopBar />
