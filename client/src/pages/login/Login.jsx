@@ -1,15 +1,12 @@
-import { Link } from "react-router-dom";
-import "./login.css";
-import { Context } from "../../context/Context";
-import { useContext, useRef } from "react";
-
 import axios from "axios";
+import { useContext, useRef } from "react";
+import { Context } from "../../context/Context";
+import "./login.css";
 
 export default function Login() {
-  
   const userRef = useRef();
   const passwordRef = useRef();
-  const { dispatch, isFetching } = useContext(Context)
+  const { dispatch, isFetching } = useContext(Context);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,20 +25,30 @@ export default function Login() {
   return (
     <div className="login">
       <span className="loginTitle">Login</span>
-      <form className="loginForm" onSubmit = {handleSubmit}>
+      <form className="loginForm" onSubmit={handleSubmit}>
         <label>Username</label>
-        <input className="loginInput" type="text" placeholder="Enter your username..."
-        ref = {userRef} />
+        <input
+          type="text"
+          className="loginInput"
+          placeholder="Enter your username..."
+          ref={userRef}
+        />
         <label>Password</label>
-        <input className="loginInput" type="password" placeholder="Enter your password..."
-        ref = {passwordRef} />
+        <input
+          type="password"
+          className="loginInput"
+          placeholder="Enter your password..."
+          ref={passwordRef}
+        />
         <button className="loginButton" type="submit" disabled={isFetching}>
-          <Link className="link" to = "/login">LOGIN</Link>
+          Login
         </button>
       </form>
-        {/* <button className="loginRegisterButton">
-          <Link className="link" to = "/register">REGISTER</Link>
-        </button> */}
+      {/* <button className="loginRegisterButton">
+        <Link className="link" to="/register">
+          Register
+        </Link>
+      </button> */}
     </div>
   );
 }
