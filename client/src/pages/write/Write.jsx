@@ -20,8 +20,9 @@ export default function Write() {
     }
     try {
 
-      await axios.post("../posts/" +user._id, newPost);
-
+      // await axios.post("../posts/" +user._id, newPost);
+      const res = await axios.post("../posts/" + user._id, newPost);
+      window.location.replace("/post/" + res.data._id);
     } catch (error) {
       
     }
