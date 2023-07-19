@@ -4,6 +4,10 @@
 ../api/.env
 .env
 
+#pictures
+*.jpg
+*.jpeg
+*.png
 
 # dependencies
 /node_modules
