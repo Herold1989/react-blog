@@ -27,7 +27,6 @@ export default function Write() {
       } catch (err) {}
     }
     try {
-      console.log(user._id)
       const res = await axios.post("../posts/" + user._id, newPost);
       window.location.replace("/post/" + res.data._id);
     } catch (err) {}
